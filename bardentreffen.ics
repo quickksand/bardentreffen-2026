@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Leon//Bardentreffen 2026//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bardentreffen-2026-leon-gitarre@leon.privat
+DTSTAMP:20260725T140000Z
+DTSTART:20260731T150000Z
+DTEND:20260731T153000Z
+SUMMARY:Leon spielt beim Bardentreffen
+DESCRIPTION:Halbe Stunde E-Gitarre beim Bardentreffen Nürnberg. Aktueller Standort siehe Einladungsseite.
+LOCATION:Augustinerhof\, Nürnberg
+END:VEVENT
+END:VCALENDAR
