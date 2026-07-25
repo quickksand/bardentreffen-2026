@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zum (dahin)schmelzen · Leon beim Bardentreffen</title>
+<meta name="description" content="Freitag, 31. Juli, 17:00 Uhr – halbe Stunde E-Gitarre beim Bardentreffen Nürnberg. Der aktuelle Standort steht immer hier.">
+<meta property="og:title" content="Zum (dahin)schmelzen 🌞🧊🎶">
+<meta property="og:description" content="Freitag, 31. Juli, 17:00 Uhr beim Bardentreffen. Aktueller Standort immer hier auf der Seite.">
+
+<!-- ══════════════════════════════════════════════════════════════
+     HIER STANDORT AKTUALISIEREN — das ist der einzige Block,
+     den du vom Handy aus anfassen musst.
+
+     status:  "geplant"  → gelber Punkt, "Standort steht noch nicht"
+              "fix"      → grüner Punkt, "Hier stehe ich"
+              "vorbei"   → grauer Punkt, Danke-Text
+     ══════════════════════════════════════════════════════════════ -->
+<script>
+  const STANDORT = {
+    status:       "geplant",
+    ort:          "Augustinerhof",
+    zusatz:       "Wenn's klappt: bei den Sitzstufen, Richtung Museumsbrücke.",
+    maps:         "https://maps.google.com/?q=Augustinerhof,+N%C3%BCrnberg",
+    aktualisiert: "25. Juli, 14:30 Uhr"
+  };
+</script>
+<!-- ══════════════ ab hier musst du nichts mehr ändern ══════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400;9..144,600;9..144,900&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dusk:      #2E1B47;
+    --dusk-soft: #6B5B85;
+    --paper:     #FFF7EE;
+    --card:      #FFFFFF;
+    --sun:       #F5772E;
+    --amber:     #FFC24B;
+    --ice:       #4FBCD4;
+    --ice-pale:  #E2F5F9;
+    --line:      #EFE3D6;
+    --live:      #2BA84A;
+    --radius:    18px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--dusk);
+    font-family: "Karla", system-ui, sans-serif;
+    font-size: 16.5px;
+    line-height: 1.6;
+    padding: 22px 16px 60px;
+  }
+  .page { max-width: 620px; margin: 0 auto; display: grid; gap: 16px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px;
+  }
+
+  /* ───────── Hero: Hitzeflimmern + Schmelzkante ───────── */
+  .hero { padding: 0; overflow: hidden; }
+  .hero-top {
+    position: relative;
+    background: linear-gradient(160deg, var(--amber) 0%, var(--sun) 55%, #E2543F 100%);
+    color: #FFF7EE;
+    padding: 46px 28px 58px;
+  }
+  .hero-welle {
+    position: absolute; left: 0; right: 0; bottom: -1px;
+    width: 100%; height: 38px; display: block;
+  }
+  .eyebrow {
+    font-size: 12.5px; font-weight: 700; letter-spacing: .16em;
+    text-transform: uppercase; opacity: .9; margin-bottom: 20px;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "SOFT" 60, "WONK" 1;
+    font-weight: 900;
+    font-size: clamp(36px, 9vw, 54px);
+    line-height: 1.06; letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  h1 .dahin { font-weight: 600; font-style: italic; opacity: .82; }
+  .hero-emojis {
+    font-size: 27px; letter-spacing: .1em; line-height: 1;
+    margin-top: 18px;
+  }
+  .hero-sub {
+    margin-top: 18px; font-size: 17.5px; line-height: 1.5;
+    max-width: 33ch; opacity: .95;
+  }
+
+  /* ───────── Foto ───────── */
+  .foto-wrap { padding: 8px 26px 0; }
+  .foto {
+    display: block; width: 100%; border-radius: 12px;
+    border: 1px solid var(--line);
+  }
+  .foto-platzhalter {
+    display: grid; place-items: center; gap: 6px; text-align: center;
+    aspect-ratio: 4 / 3; border-radius: 12px;
+    background: var(--ice-pale); border: 2px dashed var(--ice);
+    color: var(--dusk-soft); font-size: 14px; padding: 20px;
+  }
+  .foto-platzhalter b { font-size: 15px; color: var(--dusk); }
+  .bildunterschrift {
+    text-align: center; font-size: 14px; color: var(--dusk-soft);
+    margin-top: 8px; font-style: italic;
+  }
+
+  /* ───────── Eckdaten ───────── */
+  .meta { padding: 20px 26px 24px; display: grid; gap: 15px; }
+  .meta-zeile { display: flex; gap: 14px; align-items: flex-start; }
+  .meta-icon {
+    width: 40px; height: 40px; flex: 0 0 40px; border-radius: 11px;
+    background: var(--ice-pale); display: grid; place-items: center; font-size: 19px;
+  }
+  .meta-zeile strong { display: block; font-weight: 700; }
+  .meta-zeile span { color: var(--dusk-soft); font-size: 15px; }
+
+  .knopfreihe { display: flex; flex-wrap: wrap; gap: 10px; padding: 0 26px 26px; }
+  .knopf {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 20px; border-radius: 999px;
+    font-weight: 700; font-size: 15px; text-decoration: none;
+    transition: transform .12s ease;
+  }
+  .knopf:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
+  .knopf-voll { background: var(--sun); color: #FFF7EE; }
+  .knopf-voll:hover { transform: translateY(-1px); }
+  .knopf-leer { background: var(--card); color: var(--dusk); border: 1.5px solid var(--line); }
+  .knopf-leer:hover { border-color: var(--dusk-soft); }
+
+  /* ───────── Signatur: Live-Standort ───────── */
+  .standort { border: 2px solid var(--ice); background: var(--ice-pale); }
+  .standort-kopf {
+    display: flex; align-items: center; gap: 9px;
+    font-size: 12.5px; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--dusk-soft); margin-bottom: 14px;
+  }
+  .punkt { width: 11px; height: 11px; border-radius: 50%; background: var(--amber); flex: 0 0 11px; }
+  .standort[data-status="fix"]    .punkt { background: var(--live); animation: puls 1.8s ease-out infinite; }
+  .standort[data-status="vorbei"] .punkt { background: var(--dusk-soft); }
+  @keyframes puls {
+    0%   { box-shadow: 0 0 0 0 rgba(43,168,74,.6); }
+    100% { box-shadow: 0 0 0 12px rgba(43,168,74,0); }
+  }
+  .standort-ort {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "SOFT" 60, "WONK" 1;
+    font-weight: 900; font-size: clamp(26px, 6vw, 34px); line-height: 1.1;
+  }
+  .standort-zusatz { margin-top: 8px; color: var(--dusk-soft); }
+  .standort-fuss {
+    margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(79,188,212,.35);
+    display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+    font-size: 13.5px; color: var(--dusk-soft);
+  }
+  .standort-fuss a { color: var(--ice); font-weight: 700; text-decoration: none; }
+  .standort-fuss a:hover { text-decoration: underline; }
+
+  /* ───────── Text ───────── */
+  h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "SOFT" 60, "WONK" 1;
+    font-weight: 600; font-size: 23px; margin-bottom: 12px;
+  }
+  .fliesstext p + p { margin-top: 14px; }
+  .gruss {
+    margin-top: 20px; padding-top: 16px; border-top: 1px dashed var(--line);
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "SOFT" 80, "WONK" 1;
+    font-size: 19px; font-weight: 600;
+  }
+  .gruss span { display: block; font-size: 15px; font-family: "Karla", sans-serif; font-weight: 400; color: var(--dusk-soft); }
+
+  footer { text-align: center; color: var(--dusk-soft); font-size: 14px; padding-top: 6px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .standort[data-status="fix"] .punkt { animation: none; }
+    .knopf, .knopf:hover { transition: none; transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═════════ HERO ═════════ -->
+  <section class="card hero">
+    <div class="hero-top">
+      <p class="eyebrow">Bardentreffen Nürnberg 2026</p>
+      <h1>Zum <span class="dahin">(dahin)</span>schmelzen</h1>
+      <p class="hero-emojis" aria-hidden="true">🌞 🧊 🎶</p>
+      <p class="hero-sub">Von Mark Knopfler bis frei improvisiert. Eine halbe Stunde E-Gitarre, irgendwo zwischen Sonne und Kaltgetränk.</p>
+
+      <svg class="hero-welle" viewBox="0 0 640 38" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path d="M0,38 L0,20 C 110,4 190,30 300,20 C 410,10 500,32 640,12 L640,38 Z" fill="#FFFFFF"/>
+      </svg>
+    </div>
+
+    <div class="foto-wrap">
+      <img class="foto" src="leon-gitarre.jpg" alt="Leon als kleiner Junge mit Gitarre in der Hand"
+           onerror="this.outerHTML='&lt;div class=\'foto-platzhalter\'&gt;&lt;b&gt;Hier kommt dein Foto hin&lt;/b&gt;Lege das Bild als &lt;code&gt;leon-gitarre.jpg&lt;/code&gt; neben diese Datei.&lt;/div&gt;'">
+      <p class="bildunterschrift">Früh übt sich. 🎸</p>
+    </div>
+
+    <div class="meta">
+      <div class="meta-zeile">
+        <div class="meta-icon">📅</div>
+        <div>
+          <strong>Freitag, 31. Juli · 17:00 Uhr</strong>
+          <span>ungefähr eine halbe Stunde</span>
+        </div>
+      </div>
+      <div class="meta-zeile">
+        <div class="meta-icon">🎸</div>
+        <div>
+          <strong>Alte Klassiker bis freie Stücke</strong>
+          <span>alles solo, live mit dem Looper aufgebaut</span>
+        </div>
+      </div>
+      <div class="meta-zeile">
+        <div class="meta-icon">🍻</div>
+        <div>
+          <strong>Sitzen &amp; Kaltgetränke</strong>
+          <span>gute Voraussetzungen zum entspannten Berieseln-Lassen</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="knopfreihe">
+      <a class="knopf knopf-voll" id="routeKnopf" href="#" target="_blank" rel="noopener">📍 Route dorthin</a>
+      <a class="knopf knopf-leer" target="_blank" rel="noopener"
+         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Leon+spielt+beim+Bardentreffen&dates=20260731T150000Z/20260731T153000Z&location=Augustinerhof,+N%C3%BCrnberg">🗓️ In den Kalender</a>
+    </div>
+  </section>
+
+  <!-- ═════════ LIVE-STANDORT ═════════ -->
+  <section class="card standort" id="standortKarte">
+    <p class="standort-kopf"><span class="punkt"></span><span id="standortLabel">Standort – noch nicht fix</span></p>
+    <p class="standort-ort" id="standortOrt">Augustinerhof</p>
+    <p class="standort-zusatz" id="standortZusatz"></p>
+    <div class="standort-fuss">
+      <span id="standortZeit"></span>
+      <a href="#" id="standortMaps" target="_blank" rel="noopener">In Maps öffnen →</a>
+    </div>
+  </section>
+
+  <!-- ═════════ EINLADUNGSTEXT ═════════ -->
+  <section class="card">
+    <h2>Worum's geht</h2>
+    <div class="fliesstext">
+      <p>Am kommenden Freitag, den 31. Juli um 17:00 Uhr will ich beim Bardentreffen auftreten. Mit der E-Gitarre im Gepäck plane ich ein paar Tönchen im Rahmen einer halben Stunde zum Besten zu geben. Ich würde mich mega freuen, wenn du die Zeit dazu findest.</p>
+      <p>Ich schiele (🫪) aktuell auf den Augustinerhof. Da gibt's leckere Kaltgetränke und die Möglichkeit, sich während der Berieselung entspannt niederzulassen – insbesondere für die Älteren (ja genau, du bist gemeint 🌝).</p>
+      <p>Die Sache ist: es gibt keine feste Platzvergabe, und ich muss an dem Abend schauen, ob sich ein Plätzchen für uns findet. Daher probiere ich den Standort aktuell zu halten – er aktualisiert sich oben auf dieser Seite.</p>
+      <p class="gruss">Liebe Grüße, ich freu mich riesig! 🙂‍↕️<span>Leon</span></p>
+    </div>
+  </section>
+
+  <footer>Seite wird laufend aktualisiert · einfach nochmal neu laden 🔄</footer>
+
+</div>
+
+<script>
+  (function () {
+    const texte = {
+      geplant: "Standort steht noch nicht",
+      fix:     "Hier stehe ich",
+      vorbei:  "Das war's – danke fürs Kommen!"
+    };
+    const karte = document.getElementById("standortKarte");
+    karte.dataset.status = STANDORT.status;
+    document.getElementById("standortLabel").textContent  = texte[STANDORT.status] || texte.geplant;
+    document.getElementById("standortOrt").textContent     = STANDORT.ort;
+    document.getElementById("standortZusatz").textContent  = STANDORT.zusatz;
+    document.getElementById("standortZeit").textContent    = "Aktualisiert: " + STANDORT.aktualisiert;
+    document.getElementById("standortMaps").href           = STANDORT.maps;
+    document.getElementById("routeKnopf").href             = STANDORT.maps;
+  })();
+</script>
+</body>
+</html>
